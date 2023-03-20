@@ -1,15 +1,18 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
   
-    "name": "GTmetrix Analyzer Plugin",
-    "description": "This extension will analyze a page using GTmetrix",
+    "name": "Dictionary Plugin",
+    "description": "This extension lets you search for definitions of words without leaving the page.",
     "version": "1.0",
   
-    "browser_action": {
+    "action": {
      "default_icon": "icon.png",
+     "default_title": "Click to find definitions!",
      "default_popup": "popup.html"
     },
     "permissions": [
      "activeTab"
-     ]
+     ],
+
+     "host_permissions": ["https://www.dictionaryapi.com/*"]
   }
