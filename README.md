@@ -5,4 +5,4 @@ Chrome extension that lets you look up definitions without having to leave the p
 Download as zip \
 Upload to chrome://extensions/ by selecting load unpacked \
 Find a big word \
-Click on the book icon under extensions, input your word, and read the definitions! \
+Click on the book icon under extensions, input your word, and read the definitions!
