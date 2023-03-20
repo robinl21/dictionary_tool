@@ -12,30 +12,34 @@ document.addEventListener('DOMContentLoaded', function() {
             contentType: 'application/json',
             success: function(result) {
                 console.log(result);
-                let setInnerHTML = "<div style='text-align: center'>" + textName + "<br>";
+                let setInnerHTML = "<div style='text-align: center; font-size: x-large'>" + textName + "<br></div>";
                 meanings = result;
                 count = 0;
                 for (const meaning of meanings) {
                     if (count >= 3) {
                         break;
                     }
-                    setInnerHTML += "<b> DEFINITION " + (count+1) + "</b><br>";
+                    setInnerHTML += "<div style='font-size: large; text-align: center'><b> MEANING " + (count+1) + "</b><br></div>";
+                    setInnerHTML += "<div> Offensive? " + meaning["meta"]["offensive"] + "</div>";
                     console.log(meaning)
-                    let curMeaning = ""
+                    let curMeaning = "<div>"
                     curMeaning += "Part of Speech: " + meaning["fl"] + "<br>"
+                    let defCount = 0;
                     for (const def of meaning["shortdef"]) {
-                        curMeaning += "Definition: " + def + "<br>";
+                        curMeaning += "<b>Definition " + (defCount+1) + ": </b>" + def + "<br>";
+                        defCount += 1;
                     }
                     
-                    setInnerHTML += curMeaning;
+                    setInnerHTML += (curMeaning + "</div>");
                     count += 1;
                 }
-                setInnerHTML += "</div>"
+
                 document.getElementById("definitions").innerHTML=setInnerHTML
                     
             },
             error: function ajaxError(jqXHR) {
                 console.error('Error: ', jqXHR.responseText);
+                document.getElementById("definitions").innerHTML="<div>We could not find that word</div>";
             }
         });
       });
