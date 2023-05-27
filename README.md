@@ -1,4 +1,4 @@
-# Dictionary tool to help you against really big words
+# Dictionary tool I made after getting tired of looking things up on the dictionary
 Chrome extension that lets you look up definitions without having to leave the page
 
 # How to use:
